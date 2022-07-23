@@ -1,0 +1,68 @@
+{
+    "name": "antoninmasek/laravel-hashids",
+    "description": "Simple Laravel wrapper around Hashids library.",
+    "keywords": [
+        "antoninmasek",
+        "laravel",
+        "laravel-hashids"
+    ],
+    "homepage": "https://github.com/antoninmasek/laravel-hashids",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Antonín Mašek",
+            "email": "antonin.masek@icloud.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0|^8.1",
+        "hashids/hashids": "^4.1",
+        "illuminate/contracts": "^9.0",
+        "spatie/laravel-package-tools": "^1.9.2"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^6.0",
+        "nunomaduro/larastan": "^2.0.1",
+        "orchestra/testbench": "^7.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^9.5",
+        "spatie/laravel-ray": "^1.26"
+    },
+    "autoload": {
+        "psr-4": {
+            "AntoninMasek\\Hashids\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AntoninMasek\\Hashids\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AntoninMasek\\Hashids\\HashidsServiceProvider"
+            ],
+            "aliases": {
+                "Hashids": "AntoninMasek\\Hashids\\Facades\\Hashids"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
