@@ -2,7 +2,9 @@
 
 namespace AntoninMasek\Hashids;
 
-class Hashids
+use Hashids\HashidsInterface;
+
+class Hashids implements HashidsInterface
 {
     private ?string $salt = null;
 
@@ -38,23 +40,43 @@ class Hashids
     }
 
     /**
-     * @param  array<int>|int  $numbers
+     * @param  mixed  ...$numbers
      * @return string
      */
-    public function encode(array|int $numbers): string
+    public function encode(...$numbers): string
     {
         return $this->getHashidsGenerator()
-            ->encode($numbers);
+            ->encode(...$numbers);
     }
 
     /**
      * @param  string  $hash
      * @return array<int>
      */
-    public function decode(string $hash): array
+    public function decode($hash): array
     {
         return $this->getHashidsGenerator()
             ->decode($hash);
+    }
+
+    /**
+     * @param  string  $str
+     * @return string
+     */
+    public function encodeHex($str): string
+    {
+        return $this->getHashidsGenerator()
+            ->encodeHex($str);
+    }
+
+    /**
+     * @param  string  $hash
+     * @return string
+     */
+    public function decodeHex($hash): string
+    {
+        return $this->getHashidsGenerator()
+            ->decodeHex($hash);
     }
 
     private function getHashidsGenerator(): \Hashids\Hashids

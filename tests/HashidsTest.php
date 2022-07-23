@@ -10,7 +10,7 @@ class HashidsTest extends TestCase
     {
         $value = 1;
 
-        $this->assertEquals(
+        $this->assertSame(
             [$value],
             Hashids::decode(Hashids::encode($value)),
         );
@@ -20,17 +20,10 @@ class HashidsTest extends TestCase
     {
         $value = [1, 2, 3];
 
-        $this->assertEquals(
+        $this->assertSame(
             $value,
-            Hashids::decode(Hashids::encode($value)),
+            Hashids::decode(Hashids::encode(...$value)),
         );
-    }
-
-    public function testItIsNotPossibleToEncodeNull()
-    {
-        $this->expectError();
-
-        Hashids::encode(null);
     }
 
     public function testItCanEncodeWithSalt()
@@ -38,7 +31,7 @@ class HashidsTest extends TestCase
         $value = 1;
         $generator = Hashids::salt('test');
 
-        $this->assertEquals(
+        $this->assertSame(
             [$value],
             $generator->decode($generator->encode($value)),
         );
@@ -51,7 +44,7 @@ class HashidsTest extends TestCase
         $generator = Hashids::minLength($length);
         $encodedValue = $generator->encode($value);
 
-        $this->assertEquals(
+        $this->assertSame(
             [$value],
             $generator->decode($encodedValue),
         );
@@ -66,7 +59,7 @@ class HashidsTest extends TestCase
         $generator = Hashids::alphabet($alphabet);
         $encodedValue = $generator->encode($value);
 
-        $this->assertEquals(
+        $this->assertSame(
             [$value],
             $generator->decode($encodedValue),
         );
