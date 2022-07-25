@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/antoninmasek/laravel-hashids.svg?style=flat-square)](https://packagist.org/packages/antoninmasek/laravel-hashids)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/antoninmasek/laravel-hashids/run-tests?label=tests)](https://github.com/antoninmasek/laravel-hashids/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/antoninmasek/laravel-hashids/Check%20&%20fix%20styling?label=code%20style)](https://github.com/antoninmasek/laravel-hashids/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/antoninmasek/laravel-hashids/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/antoninmasek/laravel-hashids/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/antoninmasek/laravel-hashids.svg?style=flat-square)](https://packagist.org/packages/antoninmasek/laravel-hashids)
 
 This package introduces a simple fluent interface for [Hashids](https://hashids.org/php/) package.
