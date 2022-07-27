@@ -18,7 +18,7 @@ composer require antoninmasek/laravel-hashids
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-hashids-config"
+php artisan vendor:publish --tag="hashids-config"
 ```
 
 This is the contents of the published config file:
