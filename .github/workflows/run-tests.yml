@@ -14,7 +14,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         php: [8.2]
-        laravel: [9]
+        laravel: ['9.*']
         phpunit: ['9.5.8']
         testbench: ['7.22.0']
         collision: ['6.4']
@@ -54,7 +54,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         php: [8.2]
-        laravel: ['10']
+        laravel: ['10.*']
         phpunit: ['10.0']
         testbench: ['8.0']
         collision: ['7.0.2']
