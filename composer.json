@@ -33,7 +33,7 @@
         "phpunit/phpunit": "^9.5 || ^10.0",
         "spatie/laravel-ray": "^1.32.2"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
