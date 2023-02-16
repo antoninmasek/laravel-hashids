@@ -40,7 +40,7 @@ class Hashids implements HashidsInterface
     }
 
     /**
-     * @param  string|array<int, string> $numbers
+     * @param  string|array<int, string>  $numbers
      */
     public function encode(...$numbers): string
     {
