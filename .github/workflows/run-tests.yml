@@ -28,6 +28,12 @@ jobs:
             testbench: '7.22.0'
             collision: '6.4'
             phpunit: '9.5.8'
+          - phpunit: '10.0'
+            testbench: '7.22.0'
+            collision: '6.4'
+          - phpunit: '9.5.8'
+            testbench: '8.0'
+            collision: '7.0.2'
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
