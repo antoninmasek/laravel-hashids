@@ -16,7 +16,7 @@
     ],
     "homepage": "https://github.com/antoninmasek/laravel-hashids",
     "require": {
-        "php": "^8.1 || ^8.2 || ^8.3",
+        "php": "^8.1",
         "hashids/hashids": "^5.0",
         "illuminate/contracts": "^9.0 || ^10.0 || ^11.0",
         "spatie/laravel-package-tools": "^1.14.1"
@@ -24,12 +24,7 @@
     "require-dev": {
         "ergebnis/composer-normalize": "^2.29",
         "laravel/pint": "^1.5",
-        "nunomaduro/collision": "^6.0 || ^7.0.2",
-        "nunomaduro/larastan": "^2.4.0",
         "orchestra/testbench": "^7.0 || ^8.0",
-        "phpstan/extension-installer": "^1.2",
-        "phpstan/phpstan-deprecation-rules": "^1.1.1",
-        "phpstan/phpstan-phpunit": "^1.3.4",
         "phpunit/phpunit": "^9.5 || ^10.0",
         "spatie/laravel-ray": "^1.32.2"
     },
@@ -47,8 +42,8 @@
     },
     "config": {
         "allow-plugins": {
-            "phpstan/extension-installer": true,
-            "ergebnis/composer-normalize": true
+            "ergebnis/composer-normalize": true,
+            "phpstan/extension-installer": true
         },
         "sort-packages": true
     },
