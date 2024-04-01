@@ -8,9 +8,12 @@ return [
      * Please make sure your alphabet has at least 16 characters as that is the minimum
      * length of the alphabet the Hashids package requires.
      *
+     * The default alphabet choice only includes capital letters, that is to prevent
+     * possible issues with case-insensitive collations in databases.
+     *
      * @see \Hashids\Hashids::__construct
      */
-    'alphabet' => null,
+    'alphabet' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',
 
     /**
      * If you wish to globally redefine the default salt you may do so below. If set to
