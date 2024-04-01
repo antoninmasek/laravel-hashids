@@ -12,7 +12,7 @@ class Hashids implements HashidsInterface
 
     private ?int $min_length = null;
 
-    public function salt(string $salt = null): static
+    public function salt(?string $salt = null): static
     {
         $clone = clone $this;
 
@@ -21,7 +21,7 @@ class Hashids implements HashidsInterface
         return $clone;
     }
 
-    public function alphabet(string $alphabet = null): static
+    public function alphabet(?string $alphabet = null): static
     {
         $clone = clone $this;
 
@@ -30,7 +30,7 @@ class Hashids implements HashidsInterface
         return $clone;
     }
 
-    public function minLength(int $minLength = null): static
+    public function minLength(?int $minLength = null): static
     {
         $clone = clone $this;
 
