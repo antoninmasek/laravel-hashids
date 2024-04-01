@@ -49,8 +49,6 @@ class Hashids implements HashidsInterface
     }
 
     /**
-     * @param  string  $hash
-     *
      * @return array<int, string>
      */
     public function decode(string $hash): array
@@ -60,11 +58,6 @@ class Hashids implements HashidsInterface
             ->decode($hash);
     }
 
-    /**
-     * @param  string  $str
-     *
-     * @return string
-     */
     public function encodeHex(string $str): string
     {
         return $this
@@ -72,20 +65,12 @@ class Hashids implements HashidsInterface
             ->encodeHex($str);
     }
 
-    /**
-     * @param  string  $hash
-     *
-     * @return string
-     */
     public function decodeHex(string $hash): string
     {
         return $this->getHashidsGenerator()
             ->decodeHex($hash);
     }
 
-    /**
-     * @return array
-     */
     public function getConfig(): array
     {
         return array_filter([
