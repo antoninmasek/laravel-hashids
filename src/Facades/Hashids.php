@@ -12,12 +12,13 @@ use Illuminate\Support\Facades\Facade;
  * @method array decode(string $numbers)
  * @method string encodeHex(string $str)
  * @method string decodeHex(string $hash)
+ * @method array getConfig()
  *
  * @see \AntoninMasek\Hashids\Hashids
  */
 class Hashids extends Facade
 {
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): string
     {
         return \AntoninMasek\Hashids\Hashids::class;
     }

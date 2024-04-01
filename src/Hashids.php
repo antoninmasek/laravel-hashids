@@ -50,39 +50,54 @@ class Hashids implements HashidsInterface
 
     /**
      * @param  string  $hash
+     *
      * @return array<int, string>
      */
-    public function decode($hash): array
+    public function decode(string $hash): array
     {
-        return $this->getHashidsGenerator()
+        return $this
+            ->getHashidsGenerator()
             ->decode($hash);
     }
 
     /**
      * @param  string  $str
+     *
+     * @return string
      */
-    public function encodeHex($str): string
+    public function encodeHex(string $str): string
     {
-        return $this->getHashidsGenerator()
+        return $this
+            ->getHashidsGenerator()
             ->encodeHex($str);
     }
 
     /**
      * @param  string  $hash
+     *
+     * @return string
      */
-    public function decodeHex($hash): string
+    public function decodeHex(string $hash): string
     {
         return $this->getHashidsGenerator()
             ->decodeHex($hash);
     }
 
-    private function getHashidsGenerator(): \Hashids\Hashids
+    /**
+     * @return array
+     */
+    public function getConfig(): array
     {
-        $parameters = array_filter([
+        return array_filter([
             'salt' => $this->salt ?? config('hashids.salt'),
             'minHashLength' => $this->min_length ?? config('hashids.min_length'),
             'alphabet' => $this->alphabet ?? config('hashids.alphabet'),
         ]);
+    }
+
+    private function getHashidsGenerator(): \Hashids\Hashids
+    {
+        $parameters = $this->getConfig();
 
         return new \Hashids\Hashids(...$parameters);
     }
