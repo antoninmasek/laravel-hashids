@@ -1,9 +1,8 @@
 # Simple Laravel wrapper around Hashids library
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/antoninmasek/laravel-hashids.svg?style=flat-square)](https://packagist.org/packages/antoninmasek/laravel-hashids)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/antoninmasek/laravel-hashids/run-tests?label=tests)](https://github.com/antoninmasek/laravel-hashids/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/antoninmasek/laravel-hashids/Fix%20PHP%20code%20style%20issues?label=code%20style)](https://github.com/antoninmasek/laravel-hashids/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/antoninmasek/laravel-hashids.svg?style=flat-square)](https://packagist.org/packages/antoninmasek/laravel-hashids)
+![Packagist Version](https://img.shields.io/packagist/v/antoninmasek/laravel-hashids?style=flat-square)
+![GitHub Actions Tests Workflow Status](https://img.shields.io/github/actions/workflow/status/antoninmasek/laravel-hashids/run-tests.yml?branch=main&style=flat-square&label=tests)
+![Packagist Downloads](https://img.shields.io/packagist/dt/antoninmasek/laravel-hashids?style=flat-square)
 
 This package introduces a simple fluent interface for [Hashids](https://hashids.org/php/) package.
 
@@ -32,9 +31,12 @@ return [
      * Please make sure your alphabet has at least 16 characters as that is the minimum
      * length of the alphabet the Hashids package requires.
      *
+     * The default alphabet choice only includes capital letters, that is to prevent
+     * possible issues with case-insensitive collations in databases.
+     *
      * @see \Hashids\Hashids::__construct
      */
-    'alphabet' => null,
+    'alphabet' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',
 
     /**
      * If you wish to globally redefine the default salt you may do so below. If set to
@@ -85,7 +87,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 ## Credits
 
-- [Antonín Mašek](https://github.com/antoninmasek)
+[Antonín Mašek](https://github.com/antoninmasek)
 
 ## License
 
