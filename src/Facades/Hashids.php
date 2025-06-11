@@ -5,9 +5,9 @@ namespace AntoninMasek\Hashids\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method \AntoninMasek\Hashids\Hashids salt(string $salt = null)
- * @method \AntoninMasek\Hashids\Hashids alphabet(string $alphabet = null)
- * @method \AntoninMasek\Hashids\Hashids minLength(int $minLength = null)
+ * @method \AntoninMasek\Hashids\Hashids salt(?string $salt = null)
+ * @method \AntoninMasek\Hashids\Hashids alphabet(?string $alphabet = null)
+ * @method \AntoninMasek\Hashids\Hashids minLength(?int $minLength = null)
  * @method string encode(mixed $numbers)
  * @method array decode(string $numbers)
  * @method string encodeHex(string $str)

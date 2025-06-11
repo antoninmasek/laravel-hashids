@@ -6,7 +6,7 @@ use AntoninMasek\Hashids\Facades\Hashids;
 
 class HashidsTest extends TestCase
 {
-    public function testItReturnsDefaultConfig()
+    public function test_it_returns_default_config()
     {
         $config = Hashids::getConfig();
         $expectedConfig = array_filter([
@@ -18,7 +18,7 @@ class HashidsTest extends TestCase
         $this->assertSame($expectedConfig, $config);
     }
 
-    public function testItRespectsConfigAlphabet()
+    public function test_it_respects_config_alphabet()
     {
         config()->set('hashids.alphabet', $alphabet = '1234567890qwertz');
         $config = Hashids::getConfig();
@@ -26,14 +26,14 @@ class HashidsTest extends TestCase
         $this->assertSame($alphabet, $config['alphabet']);
     }
 
-    public function testItRespectsRuntimeAlphabet()
+    public function test_it_respects_runtime_alphabet()
     {
         $config = Hashids::alphabet($alphabet = '1234567890qwertz')->getConfig();
 
         $this->assertSame($alphabet, $config['alphabet']);
     }
 
-    public function testRuntimeAlphabetHasHigherPriority()
+    public function test_runtime_alphabet_has_higher_priority()
     {
         config()->set('hashids.alphabet', 'ABCDEFGHIJKLMNOP');
         $config = Hashids::alphabet($alphabet = '1234567890qwertz')->getConfig();
@@ -41,7 +41,7 @@ class HashidsTest extends TestCase
         $this->assertSame($alphabet, $config['alphabet']);
     }
 
-    public function testItRespectsConfigSalt()
+    public function test_it_respects_config_salt()
     {
         config()->set('hashids.salt', $salt = 'test');
         $config = Hashids::getConfig();
@@ -49,14 +49,14 @@ class HashidsTest extends TestCase
         $this->assertSame($salt, $config['salt']);
     }
 
-    public function testItRespectsRuntimeSalt()
+    public function test_it_respects_runtime_salt()
     {
         $config = Hashids::salt($salt = 'test')->getConfig();
 
         $this->assertSame($salt, $config['salt']);
     }
 
-    public function testRuntimeSaltHasHigherPriority()
+    public function test_runtime_salt_has_higher_priority()
     {
         config()->set('hashids.salt', 'config-salt');
         $config = Hashids::salt($salt = 'runtime-salt')->getConfig();
@@ -64,7 +64,7 @@ class HashidsTest extends TestCase
         $this->assertSame($salt, $config['salt']);
     }
 
-    public function testItRespectsConfigMinLength()
+    public function test_it_respects_config_min_length()
     {
         config()->set('hashids.min_length', $minLength = 10);
         $config = Hashids::getConfig();
@@ -72,14 +72,14 @@ class HashidsTest extends TestCase
         $this->assertSame($minLength, $config['minHashLength']);
     }
 
-    public function testItRespectsRuntimeMinLength()
+    public function test_it_respects_runtime_min_length()
     {
         $config = Hashids::minLength($minLength = 10)->getConfig();
 
         $this->assertSame($minLength, $config['minHashLength']);
     }
 
-    public function testRuntimeMinLengthHasHigherPriority()
+    public function test_runtime_min_length_has_higher_priority()
     {
         config()->set('hashids.min_length', 8);
         $config = Hashids::minLength($minLength = 10)->getConfig();
@@ -87,7 +87,7 @@ class HashidsTest extends TestCase
         $this->assertSame($minLength, $config['minHashLength']);
     }
 
-    public function testWorksWithDefaultConfig()
+    public function test_works_with_default_config()
     {
         $value = 1;
         $config = Hashids::getConfig();
@@ -103,7 +103,7 @@ class HashidsTest extends TestCase
         );
     }
 
-    public function testItCanEncodeNumber()
+    public function test_it_can_encode_number()
     {
         $value = 1;
 
@@ -113,7 +113,7 @@ class HashidsTest extends TestCase
         );
     }
 
-    public function testItCanEncodeArrayOfNumbers()
+    public function test_it_can_encode_array_of_numbers()
     {
         $value = [1, 2, 3];
 
@@ -123,7 +123,7 @@ class HashidsTest extends TestCase
         );
     }
 
-    public function testItCanEncodeWithSalt()
+    public function test_it_can_encode_with_salt()
     {
         $value = 1;
         $generator = Hashids::salt('test');
@@ -134,7 +134,7 @@ class HashidsTest extends TestCase
         );
     }
 
-    public function testItCanEncodeWithMinLength()
+    public function test_it_can_encode_with_min_length()
     {
         $value = 1;
         $length = 5;
@@ -149,7 +149,7 @@ class HashidsTest extends TestCase
         $this->assertTrue(strlen($encodedValue) >= $length);
     }
 
-    public function testItCanEncodeWithAlphabet()
+    public function test_it_can_encode_with_alphabet()
     {
         $value = 1;
         $alphabet = '1234567890qwertz';
